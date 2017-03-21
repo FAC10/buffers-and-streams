@@ -78,6 +78,24 @@ readStream.on('end', () => {
 });
 ```
 
+### Using streams in servers
+Both of the (req, res) arguments are streams, which means we can use fs.createReadStream() instead of fs.readFile(). With this,  users won't need to wait for the whole file to be buffered into memory on your servers before they can start receiving any content.
+
+**For Example:**
+
+```javascript
+var http = require('http');
+var fs = require('fs');
+
+var server = http.createServer(function (req, res) {
+    var stream = fs.createReadStream(__dirname + '/data.txt');
+    stream.pipe(res);
+});
+server.listen(8000);
+```
+
+Here `.pipe()` takes care of listening for 'data' and 'end' events from the `fs.createReadStream()`. This code is not only cleaner, but now the `data.txt` file will be written to clients one chunk at a time immediately as they are received from the disk.
+
 ### Resources
 
 [Simple overview of streams and buffers](https://www.sitepoint.com/basics-node-js-streams/)
