@@ -60,3 +60,17 @@ readStream.on('end', () => {
   console.log('completed');
 });
 ```
+
+### Resources
+
+[Simple overview of streams and buffers](https://www.sitepoint.com/basics-node-js-streams/)
+
+[Node documentation on streams](https://nodejs.org/api/stream.html)
+
+[What are streams?](https://www.tutorialspoint.com/nodejs/nodejs_streams.htm)
+
+[What are buffers?](https://www.tutorialspoint.com/nodejs/nodejs_buffers.htm)
+
+[Stream handbook](https://github.com/substack/stream-handbook)
+
+[Stream tutorial walkthrough](https://github.com/workshopper/stream-adventure)
