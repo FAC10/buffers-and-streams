@@ -1,8 +1,12 @@
 # Buffers and Streams :godmode:
 
-## What are streams
+## What are streams?
 
-Streams are objects that let you read data from a source or write data to a destination in continuous fashion. In Node.js, there are four types of streams −
+`const stream = require('stream')`
+
+Streams are modules in Node.js that let you read data from a source or write data to a destination in a continuous fashion. It provides a base API for this.
+
+In Node.js, there are four types of streams −
 
 - Readable − Stream which is used for read operation.
 
@@ -12,7 +16,16 @@ Streams are objects that let you read data from a source or write data to a dest
 
 - Transform − A type of duplex stream where the output is computed based on input.
 
-## What are buffers
+E.g. [Sockets](https://msdn.microsoft.com/en-us/library/474e45z0.aspx) instances are Duplex Streams whose Readable side allows consumption of data received from the socket and whose Writable side allows writing data to the socket.
+
+Source: https://nodejs.org/api/stream.html
+
+## Efficient data flow (teapot demo):
+
+- `stream.pipe()`: limits the buffering of data to acceptable levels
+- `highWaterMark`: sets a threshold to stop reading data until it is consumed
+
+## What are buffers?
 
 A buffer is a temporary holding spot for data being moved from one place to another. The diagram below shows how a buffer interacts with a stream.
 
