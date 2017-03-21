@@ -1,11 +1,6 @@
 var fs = require('fs');
 var file = process.argv[2];
 var time = process.argv[3] || null;
-
-
-
-
-var fileContent = '';
 var readStream = fs.createReadStream(file, 'utf8');
 
 readStream.on('error', (err) => {
@@ -29,9 +24,6 @@ readStream.on('data', (chunk) => {
   } else {
     console.log(chunk);
   }
-
-
-  fileContent += chunk;
 });
 
 readStream.on('end', () => {
