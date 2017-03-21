@@ -18,7 +18,9 @@ A buffer is a temporary holding spot for data being moved from one place to anot
 
 ![Diagram of a buffer](buffer.png)
 
-The concept is like if you are watching a Youtube Video, you can start to watch a video without downloading the whole video. If your internet speed is too slow, you would see "buffering", that means the computer is trying to collect data in order for you to keep watching that video.
+Instead of waiting for all of the data to be stored in memory, some data is transferred into the buffer. When the buffer is full, the data is passed on and processed. More data can then be transferred to the buffer, and the process continues.
+
+The concept is like if you are watching a YouTube Video. You can start to watch a video without downloading the whole video. If your internet speed is too slow, you would see "buffering", which means that the computer is trying to collect data in order for you to keep watching the video.
 
 ## Reading large files
 
