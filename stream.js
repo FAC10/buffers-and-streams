@@ -1,8 +1,6 @@
 var fs = require('fs');
 var file = process.argv[2];
-var time = process.argv[3];
-var seconds = time.split('s')[0];
-console.log('seconds', seconds);
+var time = process.argv[3] || null;
 
 
 
@@ -15,11 +13,16 @@ readStream.on('error', (err) => {
 });
 
 readStream.on('data', (chunk) => {
-  if (seconds) {
+  if (time) {
     readStream.pause();
+
+    var seconds = time.split('s')[0];
+
     setTimeout(function() {
+
       readStream.resume();
       console.log(chunk);
+
     }, 1000 * seconds);
 
 
