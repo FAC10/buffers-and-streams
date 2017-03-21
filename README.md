@@ -1,7 +1,24 @@
 # Buffers and Streams :godmode:
 
-Writing buffers
+## What are streams
 
+Streams are objects that let you read data from a source or write data to a destination in continuous fashion. In Node.js, there are four types of streams −
+
+- Readable − Stream which is used for read operation.
+
+- Writable − Stream which is used for write operation.
+
+- Duplex − Stream which can be used for both read and write operation.
+
+- Transform − A type of duplex stream where the output is computed based on input.
+
+## What are buffers
+
+A buffer is a temporary holding spot for data being moved from one place to another. The diagram below shows how a buffer interacts with a stream.
+
+![Diagram of a buffer](buffer.png)
+
+The concept is like if you are watching a Youtube Video, you can start to watch a video without downloading the whole video. If your internet speed is too slow, you would see "buffering", that means the computer is trying to collect data in order for you to keep watching that video.
 
 ## Reading large files
 
@@ -70,6 +87,8 @@ readStream.on('end', () => {
 [What are streams?](https://www.tutorialspoint.com/nodejs/nodejs_streams.htm)
 
 [What are buffers?](https://www.tutorialspoint.com/nodejs/nodejs_buffers.htm)
+
+[What is a buffer in NodeJS](http://stackoverflow.com/questions/14551006/what-is-a-buffer-in-node-js)
 
 [Stream handbook](https://github.com/substack/stream-handbook)
 
